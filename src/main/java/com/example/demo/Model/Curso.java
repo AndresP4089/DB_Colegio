@@ -1,7 +1,15 @@
 package com.example.demo.Model;
 import jakarta.persistence.*;
+import lombok.*;
+
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity
 @Table(name = "cursos")
 public class Curso {
@@ -18,12 +26,4 @@ public class Curso {
 
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL)
     private List<Materia> materias;
-
-    public Curso() {}
-
-    public Curso(String nombre) {
-        this.nombre = nombre;
-    }
-
-    // Getters y Setters
 }

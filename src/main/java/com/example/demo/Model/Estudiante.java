@@ -1,9 +1,16 @@
 package com.example.demo.Model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity
 @Table(name = "estudiantes")
 public class Estudiante {
@@ -22,12 +29,4 @@ public class Estudiante {
             inverseJoinColumns = @JoinColumn(name = "curso_id")
     )
     private List<Curso> cursos;
-
-    public Estudiante() {}
-
-    public Estudiante(String nombre) {
-        this.nombre = nombre;
-    }
-
-    // Getters y Setters
 }

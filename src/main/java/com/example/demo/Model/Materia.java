@@ -1,6 +1,14 @@
 package com.example.demo.Model;
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity
 @Table(name = "materias")
 public class Materia {
@@ -19,14 +27,4 @@ public class Materia {
     @ManyToOne
     @JoinColumn(name = "profesor_id", nullable = false)
     private Profesor profesor;
-
-    public Materia() {}
-
-    public Materia(String nombre, Curso curso, Profesor profesor) {
-        this.nombre = nombre;
-        this.curso = curso;
-        this.profesor = profesor;
-    }
-
-    // Getters y Setters
 }
